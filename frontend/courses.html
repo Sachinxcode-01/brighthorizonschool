@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Bright Horizon English Medium High School</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- VANTA.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            color: white !important;
+        }
+
+        /* Make ALL text white */
+        * {
+            color: white !important;
+        }
+
+        #vanta-bg {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- VANTA BACKGROUND -->
+<div id="vanta-bg">
+
+    <!-- NAVBAR (same style as your other pages) -->
+    <nav class="bg-black bg-opacity-40 backdrop-blur-sm p-5 fixed top-0 left-0 w-full z-40 flex justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-wide">Bright Horizon</h1>
+
+        <ul class="flex space-x-8 text-lg">
+            <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+            <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+            <li><a href="courses.html" class="text-blue-400 font-semibold">Courses</a></li>
+            <li><a href="admission.html" class="hover:text-blue-400">Admission</a></li>
+            <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <div class="content pt-32 px-6 pb-20">
+
+        <h1 class="text-4xl font-extrabold text-center mb-10 drop-shadow-lg">📘 Karnataka State Syllabus Courses</h1>
+
+        <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+
+            <!-- Primary School -->
+            <div class="p-6 bg-white bg-opacity-10 rounded-xl shadow-lg hover:bg-opacity-20 transition cursor-pointer"
+                 onclick="openCourse('primary')">
+                <h2 class="text-2xl font-bold mb-3">Primary (1st – 5th)</h2>
+                <p class="opacity-90">Interactive learning with core subjects following Karnataka State Syllabus.</p>
+            </div>
+
+            <!-- Middle School -->
+            <div class="p-6 bg-white bg-opacity-10 rounded-xl shadow-lg hover:bg-opacity-20 transition cursor-pointer"
+                 onclick="openCourse('middle')">
+                <h2 class="text-2xl font-bold mb-3">Middle School (6th – 8th)</h2>
+                <p class="opacity-90">Balanced academics with digital learning and NEP-aligned curriculum.</p>
+            </div>
+
+            <!-- High School -->
+            <div class="p-6 bg-white bg-opacity-10 rounded-xl shadow-lg hover:bg-opacity-20 transition cursor-pointer"
+                 onclick="openCourse('high')">
+                <h2 class="text-2xl font-bold mb-3">High School (9th – 10th)</h2>
+                <p class="opacity-90">Strong foundation in Science, Maths, and Languages as per KSEAB.</p>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="text-center mt-16 py-6 opacity-90">
+            <p class="text-xl font-semibold">✨ Empowering Education with Karnataka State Syllabus</p>
+            <p class="mt-1">Bright Horizon English Medium High School, 2025</p>
+        </div>
+
+    </div> <!-- content end -->
+
+</div> <!-- vanta end -->
+
+<script>
+    VANTA.BIRDS({
+        el: "#vanta-bg",
+        backgroundColor: 0x000000,
+        color1: 0xffffff,
+        color2: 0x00aaff,
+        birdSize: 1.4,
+        speedLimit: 3.0,
+        cohesion: 20,
+        quantity: 3
+    });
+
+    // Card Click Navigation
+    function openCourse(type) {
+        window.location.href = `course_${type}.html`;
+    }
+</script>
+
+</body>
+</html>

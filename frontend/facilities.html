@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facilities – Bright Horizon School</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Vanta.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        * {
+            color: white !important;
+        }
+
+        #vanta-bg {
+            width: 100%;
+            min-height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+
+        .facility-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .facility-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="vanta-bg"></div>
+
+<div class="content">
+
+    <!-- NAVBAR -->
+    <nav class="bg-black bg-opacity-40 p-5 fixed top-0 left-0 w-full z-50 flex justify-between items-center backdrop-blur-md">
+        <h1 class="text-2xl font-bold">Bright Horizon</h1>
+        <ul class="flex space-x-8 text-lg">
+            <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+            <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+            <li><a href="courses.html" class="hover:text-blue-400">Courses</a></li>
+            <li><a href="facilities.html" class="text-blue-400 font-semibold">Facilities</a></li>
+            <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="pt-32 px-6 pb-20">
+
+        <h1 class="text-4xl font-extrabold text-center mb-10 drop-shadow-lg">
+            🏫 School Facilities
+        </h1>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+
+            <!-- Filtered Water -->
+            <div class="facility-card cursor-pointer">
+                <img src="https://i.imgur.com/waterfacility.jpg" class="facility-img" alt="Filtered drinking water facility" title="Filtered Drinking Water" />
+                <div class="p-5">
+                    <h2 class="text-2xl font-bold mb-2">Filtered Drinking Water</h2>
+                    <p class="opacity-90">
+                        Clean, hygienic RO filtered water available for all students and staff.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Smartboard Classes -->
+            <div class="facility-card cursor-pointer">
+                <img src="images/IMG_20251118_073920.jpg" class="facility-img" alt="Smartboard digital classroom" title="Smartboard Digital Classes" />
+                <div class="p-5">
+                    <h2 class="text-2xl font-bold mb-2">Smartboard Digital Classes</h2>
+                    <p class="opacity-90">
+                        Digitally enhanced classrooms with interactive smartboard teaching.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Projector Room -->
+            <div class="facility-card cursor-pointer">
+                <img src="https://i.imgur.com/projectorclass.jpg" class="facility-img" alt="Projector room for presentations" title="Projector Room" />
+                <div class="p-5">
+                    <h2 class="text-2xl font-bold mb-2">Projector Room</h2>
+                    <p class="opacity-90">
+                        Modern projector room for audio-visual learning & presentations.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sports Facility -->
+            <div class="facility-card cursor-pointer">
+                <img src="https://i.imgur.com/sportsground.jpg" class="facility-img" alt="Sports and play area" title="Sports & Play Area" />
+                <div class="p-5">
+                    <h2 class="text-2xl font-bold mb-2">Sports & Play Area</h2>
+                    <p class="opacity-90">
+                        Spacious playground with equipment for athletics, games, and physical fitness.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Add New Facilities Here Easily -->
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-16 py-6 opacity-90">
+            <p class="text-xl font-semibold">🏫 Quality Facilities for Quality Education</p>
+            <p class="mt-1">Bright Horizon English Medium High School, 2025</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- VANTA SCRIPT -->
+<script>
+VANTA.BIRDS({
+    el: "#vanta-bg",
+    backgroundColor: 0x000000,
+    color1: 0xffffff,
+    color2: 0x00aaff,
+    birdSize: 1.4,
+    quantity: 3,
+    speedLimit: 3.0,
+    cohesion: 20
+});
+</script>
+
+</body>
+</html>

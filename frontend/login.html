@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Admin Login - Bright Horizon School</title>
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #121921;
+                margin: 0;
+                font-family: system-ui, sans-serif;
+                overflow: hidden;
+            }
+
+            /* Container */
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5rem;
+                flex-wrap: wrap;
+                padding: 2rem;
+            }
+
+            /* Login Form */
+            .login-form {
+                background: rgba(18, 25, 33, 0.92);
+                padding: 3rem 2.5rem;
+                border-radius: 20px;
+                min-width: 330px;
+                opacity: 1;
+                transform: scale(1);
+                border: 2px solid var(--glow-color);
+                box-shadow: 0 0 25px rgba(255, 0, 255, 0.3);
+            }
+
+            .login-form h2 {
+                color: #fff;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                text-align: center;
+                text-shadow: 0 0 10px #ff4df0;
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            .form-group label {
+                display: block;
+                color: #aaa;
+                margin-bottom: 0.4rem;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 0.8rem 1rem;
+                border-radius: 10px;
+                border: 2px solid rgba(255,255,255,0.15);
+                background: rgba(255,255,255,0.06);
+                color: #fff;
+                font-size: 1rem;
+            }
+
+            .form-group input:focus {
+                border-color: #ff4df0;
+                box-shadow: 0 0 15px #ff4df0;
+                outline: none;
+            }
+
+            .login-btn {
+                width: 100%;
+                padding: 0.9rem;
+                background: linear-gradient(135deg,#ff4df0,#c91cff);
+                border-radius: 10px;
+                color: #fff;
+                font-size: 1rem;
+                border: none;
+                cursor: pointer;
+                margin-top: 1rem;
+                font-weight: 600;
+                box-shadow: 0 0 20px #ff4df0;
+            }
+
+            .login-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0 30px #ff4df0;
+            }
+
+            .error-message {
+                margin-top: 1rem;
+                color: #ff5b5b;
+                text-align: center;
+                font-size: 0.9rem;
+                display: none;
+            }
+
+            .success-message {
+                margin-top: 1rem;
+                color: #4dff7a;
+                text-align: center;
+                font-size: 0.9rem;
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <!-- LOGIN FORM -->
+            <div class="login-form">
+                <h2>Admin Login</h2>
+
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="username" placeholder="Enter admin username" />
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter password" />
+                </div>
+
+                <button class="login-btn" onclick="login()">Login</button>
+
+                <div class="error-message" id="error">Invalid username or password</div>
+                <div class="success-message" id="success">Login Successful!</div>
+            </div>
+        </div>
+
+        <script>
+            async function login() {
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+
+                const errorMsg = document.getElementById("error");
+                const successMsg = document.getElementById("success");
+
+                errorMsg.style.display = "none";
+                successMsg.style.display = "none";
+
+                if (!username || !password) {
+                    errorMsg.textContent = "All fields are required.";
+                    errorMsg.style.display = "block";
+                    return;
+                }
+
+                try {
+                    const res = await fetch("http://localhost:5000/api/admin/login", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ username, password }),
+                    });
+
+                    const data = await res.json();
+
+                    if (res.ok) {
+                        successMsg.style.display = "block";
+
+                        // Save JWT token
+                        localStorage.setItem("token", data.token);
+
+                        // Redirect to dashboard
+                        setTimeout(() => {
+                            window.location.href = "admin_dashboard.html";
+                        }, 1200);
+                    } else {
+                        errorMsg.textContent = data.message;
+                        errorMsg.style.display = "block";
+                    }
+                } catch (err) {
+                    errorMsg.textContent = "Backend connection failed!";
+                    errorMsg.style.display = "block";
+                }
+            }
+        </script>
+
+    </body>
+</html>

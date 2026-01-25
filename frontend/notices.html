@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notices – Admin Dashboard</title>
+
+<!-- THREE + VANTA -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #fff;
+        background: #0d1117;
+    }
+
+    #vanta-bg {
+        position: fixed;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .container {
+        width: 90%;
+        margin: auto;
+        padding-top: 40px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 34px;
+        text-shadow: 0 0 15px #ff4df0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: rgba(0, 0, 0, 0.55);
+        border-radius: 12px;
+        overflow: hidden;
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+    }
+
+    th, td {
+        padding: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    th {
+        background: rgba(0, 0, 0, 0.75);
+        font-size: 16px;
+    }
+
+    tr:hover {
+        background: rgba(255, 77, 240, 0.1);
+    }
+
+    .delete-btn {
+        padding: 6px 12px;
+        background: #ff4d4d;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    }
+    .delete-btn:hover {
+        background: #ff1a1a;
+    }
+</style>
+</head>
+
+<body>
+
+<div id="vanta-bg"></div>
+
+<div class="container">
+    <h1>Notices</h1>
+
+    <table id="noticesTable">
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Content</th>
+            <th>Action</th>
+        </tr>
+    </table>
+</div>
+
+<script>
+// VANTA DARK BIRDS EFFECT
+VANTA.BIRDS({
+    el: "#vanta-bg",
+    backgroundAlpha: 0,
+    color1: 0xff4df0,
+    color2: 0xffffff,
+    birdSize: 1.2,
+    quantity: 3,
+    speedLimit: 3,
+    cohesion: 20,
+    alignment: 25,
+    separation: 40
+});
+
+// FETCH NOTICES
+async function loadNotices() {
+    try {
+        const res = await fetch("http://localhost:5000/api/notices");
+        const data = await res.json();
+
+        const table = document.getElementById("noticesTable");
+
+        // Clear old rows except header
+        table.innerHTML = `
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Content</th>
+                <th>Action</th>
+            </tr>
+        `;
+
+        data.forEach(notice => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${notice.title}</td>
+                <td>${new Date(notice.date).toLocaleDateString()}</td>
+                <td>${notice.content}</td>
+                <td>
+                    <button class="delete-btn" onclick="deleteNotice('${notice._id}')">Delete</button>
+                </td>
+            `;
+            table.appendChild(row);
+        });
+
+    } catch (error) {
+        console.error("Error loading notices:", error);
+    }
+}
+
+// DELETE NOTICE
+async function deleteNotice(id) {
+    if (!confirm("Are you sure you want to delete this notice?")) return;
+
+    try {
+        const res = await fetch(`http://localhost:5000/api/notices/${id}`, {
+            method: "DELETE"
+        });
+
+        if (res.ok) {
+            alert("Notice deleted successfully!");
+            loadNotices();
+        } else {
+            alert("Failed to delete notice");
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Error deleting notice");
+    }
+}
+
+loadNotices();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright Horizon School</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Vanta.js Birds -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html" class="logo">Bright Horizon</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="admission.html">Admission</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="index-hero">
+    <div class="content">
+      <h1 class="index-h1">Welcome to Bright Horizon School</h1>
+      <p>Shaping Young Minds for a Brighter Future. Excellence in Education, Innovation, and Growth.</p>
+      <a href="explore.html" class="cta-btn">Explore More</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Bright Horizon School. All Rights Reserved.
+  </footer>
+
+  <!-- VANTA.js Effect -->
+  <script>
+    VANTA.BIRDS({
+      el: "#hero",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundAlpha: 0.0,   /* Keep Vanta overlay transparent to show black background */
+      color1: 0xff6b6b,
+      color2: 0x1e90ff,
+      quantity: 3
+    });
+  </script>
+</body>
+</html>

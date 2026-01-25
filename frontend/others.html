@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Other Details – Bright Horizon School</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Vanta.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+<style>
+    * { color: white !important; }
+    #vanta-bg { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; }
+    .content { position: relative; z-index: 2; padding-bottom: 60px; }
+
+    /* Teacher Card */
+    .teacher-card {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: 0.35s ease;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    .teacher-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+    .teacher-img { height: 170px; width: 100%; object-fit: cover; }
+</style>
+</head>
+
+<body>
+<!-- Background -->
+<div id="vanta-bg"></div>
+
+<div class="content">
+    <!-- NAVBAR -->
+    <nav class="bg-black bg-opacity-40 p-5 fixed top-0 left-0 w-full z-50 flex justify-between items-center backdrop-blur-md">
+        <h1 class="text-2xl font-bold">Bright Horizon</h1>
+        <ul class="flex space-x-8 text-lg">
+            <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+            <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+            <li><a href="courses.html" class="hover:text-blue-400">Courses</a></li>
+            <li><a href="facilities.html" class="hover:text-blue-400">Facilities</a></li>
+            <li><a href="others.html" class="text-blue-400 font-semibold">Other</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="pt-32 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold drop-shadow-lg">📊 School Information</h1>
+            <p class="text-xl mt-2 opacity-90">Overall summary of our school</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 text-center mb-16">
+            <div class="teacher-card py-10">
+                <h2 class="text-5xl font-bold">650+</h2>
+                <p class="text-xl mt-2 opacity-90">Total Students</p>
+            </div>
+            <div class="teacher-card py-10">
+                <h2 class="text-5xl font-bold" id="total-teachers">0</h2>
+                <p class="text-xl mt-2 opacity-90">Total Teachers</p>
+            </div>
+        </div>
+
+        <!-- Teachers Section -->
+        <h2 class="text-3xl font-bold mt-16 mb-6 border-b pb-2">👩‍🏫 Our Teaching Staff</h2>
+        <div id="teachers-grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Dynamic teacher cards will appear here -->
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-16 py-6 opacity-90">
+            <p class="text-xl font-semibold">Bright Horizon English Medium High School</p>
+            <p class="mt-1">Dedicated Staff • Strong Academics • Holistic Development</p>
+        </div>
+    </div>
+</div>
+
+<!-- VANTA INIT -->
+<script>
+VANTA.BIRDS({
+    el: "#vanta-bg",
+    backgroundColor: 0x000000,
+    color1: 0xffffff,
+    color2: 0x00aaff,
+    birdSize: 1.3,
+    quantity: 3,
+    cohesion: 20,
+    speedLimit: 3.0
+});
+</script>
+
+<!-- Dynamic Teachers Script -->
+<script>
+async function loadTeachers() {
+    const res = await fetch("http://localhost:5000/api/faculty");
+    const teachers = await res.json();
+
+    const grid = document.getElementById("teachers-grid");
+    grid.innerHTML = ""; // clear previous cards
+
+    teachers.forEach(t => {
+        const card = document.createElement("div");
+        card.classList.add("teacher-card");
+        card.innerHTML = `
+            <img src="${t.image || 'https://via.placeholder.com/300'}" class="teacher-img" alt="${t.name}, ${t.subject}" />
+            <div class="p-5">
+                <h3 class="text-2xl font-bold">${t.name}</h3>
+                <p class="opacity-90 mt-2">${t.subject}</p>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+loadTeachers();
+
+</script>
+
+</body>
+</html>

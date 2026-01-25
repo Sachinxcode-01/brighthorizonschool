@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Applications – Admin</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: white;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.05);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    table th, table td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+    }
+
+    table th {
+      background: rgba(255,255,255,0.1);
+      font-weight: bold;
+    }
+
+    tr:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .delete-btn {
+      padding: 6px 12px;
+      background: #ff4d4d;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .delete-btn:hover {
+      background: #ff1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Admission Form Submissions</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>DOB</th>
+        <th>Grade</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody id="table-body"></tbody>
+  </table>
+
+  <script>
+    async function loadAdmissions() {
+      try {
+        const res = await fetch("http://localhost:5000/api/admissions");
+        const data = await res.json();
+
+        const tbody = document.getElementById("table-body");
+        tbody.innerHTML = "";
+
+        data.forEach(ad => {
+          const row = `
+            <tr>
+              <td>${ad.fullname}</td>
+              <td>${ad.dob}</td>
+              <td>${ad.grade}</td>
+              <td>${ad.email}</td>
+              <td>${ad.phone}</td>
+              <td>${ad.address}</td>
+              <td>
+                <button class="delete-btn" onclick="deleteAdmission('${ad._id}')">Delete</button>
+              </td>
+            </tr>
+          `;
+          tbody.innerHTML += row;
+        });
+
+      } catch (error) {
+        alert("Failed to load admissions!");
+      }
+    }
+
+    async function deleteAdmission(id) {
+      if (!confirm("Delete this application?")) return;
+
+      try {
+        const res = await fetch(`http://localhost:5000/api/admissions/${id}`, {
+          method: "DELETE"
+        });
+
+        if (res.ok) {
+          alert("Deleted successfully");
+          loadAdmissions();
+        } else {
+          alert("Failed to delete");
+        }
+
+      } catch (err) {
+        alert("Error deleting!");
+      }
+    }
+
+    loadAdmissions();
+  </script>
+
+</body>
+</html>

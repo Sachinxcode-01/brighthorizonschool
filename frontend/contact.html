@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Bright Horizon School</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vanta Birds -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
+    body, html { height:100%; width:100%; overflow-x:hidden; background:black; color:white; }
+
+    /* Navbar */
+    nav { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; position:fixed; width:100%; z-index:100; background:rgba(0,0,0,0.7); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); }
+    nav .logo { color:white; font-size:1.8rem; font-weight:700; text-decoration:none; }
+    nav .nav-links { display:flex; gap:25px; }
+    nav .nav-links a { color:white; text-decoration:none; font-weight:500; position:relative; transition:0.3s; }
+    nav .nav-links a:hover::after { content:""; position:absolute; bottom:-5px; left:0; width:100%; height:2px; background:white; }
+
+    /* Hero Section */
+    #hero { height:50vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; z-index:1; }
+    #hero h1 { font-size:3rem; margin-bottom:20px; letter-spacing:2px; animation:fadeInUp 1.5s ease forwards; opacity:0; }
+    #hero p { font-size:1.2rem; max-width:700px; animation:fadeInUp 2s ease forwards; opacity:0; }
+
+    @keyframes fadeInUp {
+      0% { opacity:0; transform:translateY(50px);}
+      100% { opacity:1; transform:translateY(0);}
+    }
+
+    /* Contact Section */
+    #contact { display:flex; flex-wrap:wrap; gap:50px; justify-content:center; padding:80px 50px; }
+    .contact-form, .contact-map { flex:1 1 400px; border-radius:15px; padding:30px; -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); background:rgba(255,255,255,0.05); transition:0.4s; }
+    .contact-form:hover, .contact-map:hover { transform:translateY(-10px) scale(1.02); background:rgba(255,255,255,0.1); }
+
+    .contact-form h2 { text-align:center; margin-bottom:20px; }
+    .contact-form input, .contact-form textarea { width:100%; padding:12px 15px; margin-bottom:20px; border-radius:8px; border:none; outline:none; background:rgba(255,255,255,0.1); color:white; }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color:#ddd; }
+    .contact-form button { width:100%; padding:15px; border:none; border-radius:50px; background:#ff6b6b; color:white; font-weight:600; cursor:pointer; transition:0.3s; }
+    .contact-form button:hover { background:#ff4757; transform:translateY(-3px); }
+
+    /* Social Icons */
+    .social-icons img {
+      width:48px;
+      margin:0 15px;
+      transition:0.3s;
+      filter: drop-shadow(0 0 5px white);
+      border-radius:15px;
+    }
+    .social-icons img:hover {
+      transform:scale(1.2);
+      filter:drop-shadow(0 0 10px white);
+    }
+
+    .social-icons {
+      margin-top:25px;
+      text-align:center;
+    }
+
+    /* Map */
+    .contact-map iframe { width:100%; height:100%; border-radius:15px; border:none; }
+
+    footer { text-align:center; padding:20px; background:#111; color:white; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html" class="logo">Bright Horizon</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="admission.html">Admission</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div>
+      <h1>Contact Us</h1>
+      <p>Get in touch with Bright Horizon School for queries, admission details or any help.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- ⭐ REAL APP ICONS -->
+      <div class="social-icons">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/?text=Check%20out%20Bright%20Horizon%20School%20https://yourwebsite.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Map -->
+    <div class="contact-map">
+      <iframe src="https://www.google.com/maps/embed?..." title="Bright Horizon School location"></iframe>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Bright Horizon School. All Rights Reserved.
+  </footer>
+
+  <!-- VANTA -->
+  <script>
+    VANTA.BIRDS({
+      el: "#hero",
+      mouseControls: true,
+      touchControls: true,
+      backgroundAlpha: 0.0,
+      color1: 0xff6b6b,
+      color2: 0x1e90ff,
+      quantity: 3
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Message sent successfully!");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

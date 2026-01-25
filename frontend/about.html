@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Bright Horizon School</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vanta.js Birds -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
+    body, html { height:100%; width:100%; overflow-x:hidden; background:black; color:white; }
+
+    /* Navbar */
+    nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 50px;
+      position:fixed;
+      width:100%;
+      z-index:100;
+      background:rgba(0,0,0,0.7);
+      -webkit-backdrop-filter:blur(10px);
+      backdrop-filter:blur(10px);
+      top:0;
+      left:0;
+    }
+
+    nav .logo {
+      color:white;
+      font-size:1.8rem;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    nav .nav-links {
+      display:flex;
+      gap:25px;
+    }
+
+    nav .nav-links a {
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      font-size:1rem;
+      position:relative;
+    }
+
+    nav .nav-links a:hover::after {
+      content:"";
+      position:absolute;
+      bottom:-5px;
+      left:0;
+      width:100%;
+      height:2px;
+      background:white;
+    }
+
+    /* Hero */
+    #hero {
+      margin-top:120px;
+      height:50vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    #hero h1 {
+      font-size:3rem;
+      margin-bottom:20px;
+      animation:fadeInUp 1.5s;
+      opacity:0;
+      animation-fill-mode:forwards;
+    }
+
+    #hero p {
+      font-size:1.2rem;
+      max-width:700px;
+      margin:auto;
+      animation:fadeInUp 2s;
+      opacity:0;
+      animation-fill-mode:forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity:0; transform:translateY(50px); }
+      100% { opacity:1; transform:translateY(0); }
+    }
+
+    /* Features Section */
+    #features {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      padding:80px 50px;
+    }
+
+    .feature-card {
+      background:rgba(255,255,255,0.15);
+      border:1px solid rgba(255,255,255,0.3);
+      box-shadow:0 10px 25px rgba(0,0,0,0.5);
+      -webkit-backdrop-filter:blur(12px);
+      backdrop-filter:blur(12px);
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      opacity:1;
+      transition:0.4s;
+    }
+
+    .feature-card:hover {
+      transform:translateY(-10px) scale(1.05);
+      box-shadow:0 15px 35px rgba(0,0,0,0.7);
+      background:rgba(255,255,255,0.22);
+    }
+
+    .feature-card h3 {
+      font-size:1.6rem;
+      margin-bottom:15px;
+      color:#ff6b6b;
+      font-weight:700;
+    }
+
+    .feature-card p {
+      font-size:1rem;
+      line-height:1.7;
+      color:#eee;
+    }
+
+    /* Footer */
+    footer {
+      text-align:center;
+      padding:20px;
+      background:#111;
+      color:white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html" class="logo">Bright Horizon</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="admission.html">Admission</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="about-hero">
+    <div>
+      <h1>About Bright Horizon School</h1>
+      <p>At Bright Horizon, we nurture young minds with excellence, creativity, and innovation, empowering them for a brighter future.</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="feature-card">
+      <h3>Excellence in Education</h3>
+      <p>We provide world-class education, fostering academic excellence and holistic development in every student.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Innovative Learning</h3>
+      <p>Our curriculum integrates modern teaching methods, technology, and creativity to make learning engaging and effective.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Extra-Curricular Growth</h3>
+      <p>Students are encouraged to explore arts, sports, and community activities to develop their skills and confidence.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Safe & Supportive Environment</h3>
+      <p>We maintain a safe, nurturing, and inclusive environment where every child feels valued and motivated.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Bright Horizon School. All Rights Reserved.
+  </footer>
+
+  <!-- VANTA.js Effect -->
+  <script>
+    VANTA.BIRDS({
+      el: "#hero",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundAlpha: 0.0,
+      color1: 0xff6b6b,
+      color2: 0x1e90ff,
+      quantity: 3
+    });
+  </script>
+</body>
+</html>

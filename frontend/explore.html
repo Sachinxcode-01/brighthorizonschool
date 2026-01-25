@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore - Bright Horizon School</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Vanta.js Birds -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html" class="logo">Bright Horizon</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="admission.html">Admission</a>
+      <a href="contact.html">Contact</a>
+      <a href="explore.html">Explore</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="explore-hero">
+    <div>
+      <h1>Explore Bright Horizon</h1>
+      <p>Discover our features, courses, facilities, and everything else that makes us special.</p>
+    </div>
+  </section>
+
+  <!-- Features Cards -->
+  <section id="features">
+  <!-- Features Card -->
+  <a href="features.html" class="card-link">
+    <div class="card">
+      <h3>Features</h3>
+      <p>Modern classrooms, digital learning tools, and experienced faculty to enhance learning.</p>
+    </div>
+  </a>
+
+  <!-- Gallery Card -->
+  <a href="gallery.html" class="card-link">
+    <div class="card">
+      <h3>Gallery</h3>
+      <p>Explore our school’s events, activities, and campus life through vibrant images.</p>
+    </div>
+  </a>
+
+  <!-- Courses Card -->
+  <a href="courses.html" class="card-link">
+    <div class="card">
+      <h3>Courses</h3>
+      <p>Comprehensive curriculum from primary to higher secondary with extra-curricular programs.</p>
+    </div>
+  </a>
+
+  <!-- Facilities Card -->
+  <a href="facilities.html" class="card-link">
+    <div class="card">
+      <h3>Facilities</h3>
+      <p>Library, sports complex, laboratories, playgrounds, and modern amenities for students.</p>
+    </div>
+  </a>
+
+  <!-- Others Card -->
+  <a href="others.html" class="card-link">
+    <div class="card">
+      <h3>Others</h3>
+      <p>Special workshops, seminars, career guidance, and cultural activities for holistic growth.</p>
+    </div>
+  </a>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Bright Horizon School. All Rights Reserved.
+  </footer>
+
+  <!-- VANTA.js Birds -->
+  <script>
+    VANTA.BIRDS({
+      el: "#hero",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundAlpha: 0.0,
+      color1: 0xff6b6b,
+      color2: 0x1e90ff,
+      quantity: 3
+    });
+
+    // Animate cards on scroll
+    const cards = document.querySelectorAll('.card');
+    function revealCards() {
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        const trigger = window.innerHeight / 1.2;
+        if(cardTop < trigger){
+          card.style.opacity = 1;
+          card.style.transform = 'translateY(0)';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealCards);
+    window.addEventListener('load', revealCards);
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard - Bright Horizon School</title>
+
+<!-- Vanta.js (Birds) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Poppins, Arial, sans-serif;
+        color: white;
+        overflow-x: hidden;
+    }
+
+    #vanta-bg {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+    }
+
+    .container {
+        width: 90%;
+        margin: auto;
+        padding-top: 40px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2.8rem;
+        text-shadow: 0 0 15px #3557ed;
+        margin-bottom: 40px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .button {
+        background: linear-gradient(135deg, #323be4, #c91cff);
+        padding: 14px 22px;
+        color: white;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.2rem;
+        box-shadow: 0 0 15px #364bd4;
+        transition: 0.2s;
+    }
+
+    .button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 25px #482adf;
+    }
+</style>
+</head>
+<body>
+
+<div id="vanta-bg"></div>
+
+<div class="container">
+    <h1>Admin Dashboard</h1>
+
+    <div class="buttons">
+        <a href="messages.html" class="button">📩 View Messages</a>
+        <a href="admissions.html" class="button">📑 Admission Forms</a>
+        <a href="notices.html" class="button">📢 Manage Notices</a>
+        <a href="faculty.html" class="button">👨‍🏫 Manage Faculty</a>
+        <a href="gallery.html" class="button">🖼️ Gallery Uploads</a>
+    </div>
+</div>
+
+<script>
+VANTA.BIRDS({
+    el: "#vanta-bg",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    backgroundColor: 0x0d1117, 
+    color1: 0xff4df0,
+    color2: 0xc91cff,
+    birdSize: 1.2,
+    speedLimit: 3.0,
+    separation: 50.00
+});
+</script>
+
+</body>
+</html>

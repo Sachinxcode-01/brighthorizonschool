@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission - Bright Horizon School</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vanta.js Birds -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
+    body, html { height:100%; width:100%; overflow-x:hidden; background:black; color:white; }
+
+    /* Navbar */
+    nav { 
+      display:flex; justify-content:space-between; align-items:center; 
+      padding:20px 50px; position:fixed; width:100%; z-index:100;
+      background:rgba(0,0,0,0.7); 
+      -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    }
+    nav .logo { color:white; font-size:1.8rem; font-weight:700; text-decoration:none; }
+    nav .nav-links { display:flex; gap:25px; }
+    nav .nav-links a {
+      color:white; text-decoration:none; font-weight:500; position:relative; transition:0.3s;
+    }
+    nav .nav-links a:hover::after {
+      content:""; position:absolute; bottom:-5px; left:0; width:100%; height:2px; background:white;
+    }
+
+    /* Hero Section */
+    #hero { height:50vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; z-index:1; }
+    #hero h1 { font-size:3rem; margin-bottom:20px; letter-spacing:2px; animation:fadeInUp 1.5s ease forwards; opacity:0; }
+    #hero p { font-size:1.2rem; max-width:700px; animation:fadeInUp 2s ease forwards; opacity:0; }
+
+    @keyframes fadeInUp {
+      0% { opacity:0; transform:translateY(50px);}
+      100% { opacity:1; transform:translateY(0);}
+    }
+
+    /* Admission Form */
+    #admission-form {
+      max-width:700px;
+      margin:50px auto;
+      background:rgba(255,255,255,0.05);
+      padding:40px;
+      border-radius:15px;
+      -webkit-backdrop-filter:blur(10px);
+      backdrop-filter:blur(10px);
+      box-shadow:0 0 30px rgba(255,255,255,0.1);
+      opacity:0;
+      transform:translateY(50px);
+      transition:0.8s ease;
+    }
+
+    #admission-form h2 { 
+      margin-bottom:30px; 
+      text-align:center; 
+      font-size:2rem; 
+    }
+
+    /* Input Fix (white text) */
+    #admission-form input,
+    #admission-form select,
+    #admission-form textarea {
+      width:100%;
+      padding:12px 15px;
+      margin-bottom:20px;
+      border-radius:8px;
+      border:none;
+      outline:none;
+      background:rgba(255,255,255,0.1);
+      color:white !important;
+      font-size:1rem;
+    }
+
+    #admission-form input::placeholder,
+    #admission-form textarea::placeholder {
+      color:rgba(255,255,255,0.6);
+    }
+
+    /* Dropdown text color */
+    select option {
+      background:black;
+      color:white;
+    }
+
+    /* Form button */
+    #admission-form button {
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:50px;
+      background:#ff6b6b;
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    #admission-form button:hover {
+      background:#ff4757; 
+      transform:translateY(-3px);
+    }
+
+    /* Footer */
+    footer { text-align:center; padding:20px; background:#111; color:white; margin-top:50px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html" class="logo">Bright Horizon</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="admission.html">Admission</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div>
+      <h1>Admission Form</h1>
+      <p>Apply now to join Bright Horizon School. Fill all details carefully.</p>
+    </div>
+  </section>
+
+  <!-- Admission Form -->
+  <section id="admission-form">
+    <h2>Student Admission Form</h2>
+    <form id="form">
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="text" name="dob" placeholder="Date of Birth (DD/MM/YYYY)" required>
+
+      <label for="grade">Select Grade</label>
+      <select id="grade" name="grade" required>
+        <option value="">Select Grade</option>
+        <option value="1">Class 1</option>
+        <option value="2">Class 2</option>
+        <option value="3">Class 3</option>
+        <option value="4">Class 4</option>
+        <option value="5">Class 5</option>
+        <option value="6">Class 6</option>
+        <option value="7">Class 7</option>
+        <option value="8">Class 8</option>
+        <option value="9">Class 9</option>
+        <option value="10">Class 10</option>
+      </select>
+
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <textarea name="address" rows="4" placeholder="Address" required></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Bright Horizon School. All Rights Reserved.
+  </footer>
+
+  <!-- VANTA.js Birds -->
+  <script>
+    VANTA.BIRDS({
+      el: "#hero",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundAlpha: 0.0,
+      color1: 0xff6b6b,
+      color2: 0x1e90ff,
+      quantity: 3
+    });
+
+    const formSection = document.getElementById('admission-form');
+
+    function revealForm() {
+      const formTop = formSection.getBoundingClientRect().top;
+      const trigger = window.innerHeight / 1.3;
+      if(formTop < trigger){
+        formSection.style.opacity = 1;
+        formSection.style.transform = 'translateY(0)';
+      }
+    }
+
+    window.addEventListener('scroll', revealForm);
+    window.addEventListener('load', revealForm);
+
+    // Optional submit alert
+    document.getElementById('form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    fullname: e.target.fullname.value,
+    dob: e.target.dob.value,
+    grade: e.target.grade.value,
+    email: e.target.email.value,
+    phone: e.target.phone.value,
+    address: e.target.address.value
+  };
+
+  try {
+    const res = await fetch("http://localhost:5000/api/admissions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("Application submitted successfully!");
+      e.target.reset();
+    } else {
+      alert("Error: " + data.message);
+    }
+
+  } catch (error) {
+    alert("Failed to submit! Backend problem.");
+  }
+});
+
+  </script>
+
+</body>
+</html>

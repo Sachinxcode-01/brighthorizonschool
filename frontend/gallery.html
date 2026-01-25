@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Bright Horizon School</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vanta.js Birds -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
+    body, html { height:100%; width:100%; overflow-x:hidden; background:black; color:white; }
+
+    /* Navbar */
+    nav { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; position:fixed; width:100%; z-index:100; background:rgba(0,0,0,0.7); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);}
+    nav .logo { color:white; font-size:1.8rem; font-weight:700; text-decoration:none; }
+    nav .nav-links { display:flex; gap:25px; }
+    nav .nav-links a { color:white; text-decoration:none; font-weight:500; position:relative; transition:0.3s; }
+    nav .nav-links a:hover::after { content:""; position:absolute; bottom:-5px; left:0; width:100%; height:2px; background:white; }
+
+    /* Hero Section */
+    #hero { height:50vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; z-index:1; }
+    #hero h1 { font-size:3rem; margin-bottom:20px; letter-spacing:2px; animation:fadeInUp 1.5s ease forwards; opacity:0; }
+    #hero p { font-size:1.2rem; max-width:700px; animation:fadeInUp 2s ease forwards; opacity:0; }
+
+    @keyframes fadeInUp {
+      0% { opacity:0; transform:translateY(50px);}
+      100% { opacity:1; transform:translateY(0);}
+    }
+
+    /* Gallery Grid */
+    #gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:25px; padding:80px 50px; }
+    .gallery-item {
+      position:relative;
+      overflow:hidden;
+      border-radius:15px;
+      opacity:0;
+      transform:translateY(50px);
+      transition:0.6s ease;
+      cursor:pointer;
+    }
+    .gallery-item img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      border-radius:15px;
+    }
+    .gallery-item:hover img {
+      transform:scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    /* Footer */
+    footer { text-align:center; padding:20px; background:#111; color:white; }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html" class="logo">Bright Horizon</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="admission.html">Admission</a>
+      <a href="contact.html">Contact</a>
+      <a href="Login.html">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div>
+      <h1>School Gallery</h1>
+      <p>Explore the vibrant moments, activities, and campus life of Bright Horizon School.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+<section id="gallery">
+    <div class="gallery-item">
+        <img src="images/IMG_20251118_073920.jpg" alt="School 1">
+
+    </div>
+
+    <div class="gallery-item">
+        <img src="images/IMG_20250909_132532.jpg" alt="School 2">
+    </div>
+
+    <div class="gallery-item">
+        <img src="images/IMG_20251021_083038.jpg" alt="School 3">
+    </div>
+
+    <div class="gallery-item">
+        <img src="images/IMG_20251118_074245.jpg" alt="School 4">
+    </div>
+
+    <div class="gallery-item">
+        <img src="images/IMG_20251118_073639.jpg" alt="School 5">
+    </div>
+</section>
+
+    
+    
+    
+
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Bright Horizon School. All Rights Reserved.
+  </footer>
+
+  <!-- VANTA.js Birds -->
+  <script>
+    VANTA.BIRDS({
+      el: "#hero",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundAlpha: 0.0,
+      color1: 0xff6b6b,
+      color2: 0x1e90ff,
+      quantity: 3
+    });
+
+    // Animate gallery items on scroll
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    function revealGallery() {
+      galleryItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        const trigger = window.innerHeight / 1.2;
+        if(itemTop < trigger){
+          item.style.opacity = 1;
+          item.style.transform = 'translateY(0)';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealGallery);
+    window.addEventListener('load', revealGallery);
+  </script>
+</body>
+</html>

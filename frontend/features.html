@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - Bright Horizon School</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vanta.js Birds -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
+    body, html { height:100%; width:100%; overflow-x:hidden; background:black; color:white; }
+
+    /* Navbar */
+    nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 50px;
+      position:fixed;
+      width:100%;
+      z-index:100;
+      background:rgba(0,0,0,0.7);
+      -webkit-backdrop-filter:blur(10px);
+      backdrop-filter:blur(10px);
+      top:0;
+      left:0;
+    }
+
+    nav .logo {
+      color:white;
+      font-size:1.8rem;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    nav .nav-links {
+      display:flex;
+      gap:25px;
+    }
+
+    nav .nav-links a {
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      font-size:1rem;
+      position:relative;
+    }
+
+    nav .nav-links a:hover::after {
+      content:"";
+      position:absolute;
+      bottom:-5px;
+      left:0;
+      width:100%;
+      height:2px;
+      background:white;
+    }
+
+    /* Hero */
+    #hero {
+      margin-top:120px;
+      height:50vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    #hero h1 {
+      font-size:3rem;
+      margin-bottom:20px;
+      animation:fadeInUp 1.5s;
+      opacity:0;
+      animation-fill-mode:forwards;
+    }
+
+    #hero p {
+      font-size:1.2rem;
+      max-width:700px;
+      margin:auto;
+      animation:fadeInUp 2s;
+      opacity:0;
+      animation-fill-mode:forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity:0; transform:translateY(50px); }
+      100% { opacity:1; transform:translateY(0); }
+    }
+
+    /* Feature Cards – OLD STYLE RESTORED */
+    #features {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      padding:80px 50px;
+    }
+
+    .feature-card {
+      background:rgba(255,255,255,0.15);      /* STRONG glass effect */
+      border:1px solid rgba(255,255,255,0.3); /* Visible border */
+      box-shadow:0 10px 25px rgba(0,0,0,0.5); /* Old shadow style */
+      -webkit-backdrop-filter:blur(12px);
+      backdrop-filter:blur(12px);
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      opacity:1;
+      transition:0.4s;
+    }
+
+    .feature-card:hover {
+      transform:translateY(-10px) scale(1.05);
+      box-shadow:0 15px 35px rgba(0,0,0,0.7);
+      background:rgba(255,255,255,0.22);
+    }
+
+    .feature-card h3 {
+      font-size:1.6rem;
+      margin-bottom:15px;
+      color:#ff6b6b;
+      font-weight:700;
+    }
+
+    .feature-card p {
+      font-size:1rem;
+      line-height:1.7;
+      color:#eee;
+    }
+
+    /* Footer */
+    footer {
+      text-align:center;
+      padding:20px;
+      background:#111;
+      color:white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html" class="logo">Bright Horizon</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="admission.html">Admission</a>
+      <a href="contact.html">Contact</a>
+      <a href="explore.html">Explore</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div>
+      <h1>Our School Features</h1>
+      <p>Bright Horizon School offers modern learning facilities, innovative programs, and holistic development opportunities for students.</p>
+    </div>
+  </section>
+
+  <!-- Features Cards -->
+  <section id="features">
+
+    <div class="feature-card">
+      <h3>Modern Classrooms</h3>
+      <p>Well-equipped classrooms with digital smart boards and interactive learning tools for effective teaching.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Laboratories</h3>
+      <p>Science and computer labs with latest equipment to provide hands-on practical experience.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Library</h3>
+      <p>Spacious library with a wide collection of books, e-resources, and reading corners for all grades.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Sports Facilities</h3>
+      <p>Playgrounds, indoor sports halls, and coaching programs to encourage physical fitness and teamwork.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Music & Arts</h3>
+      <p>Dedicated studios and classes for music, dance, painting, and creative arts.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Safe Campus</h3>
+      <p>24/7 CCTV surveillance, trained staff, and secure campus entry for a safe learning environment.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Science Laboratory</h3>
+      <p>Fully equipped physics, chemistry, and biology labs that encourage practical learning, experimentation, and scientific curiosity.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Computer Laboratory</h3>
+      <p>Modern computer lab with high-speed internet and updated systems to enhance digital skills and technology-based learning.</p>
+    </div>
+
+
+  </section>
+
+  <footer>
+    &copy; 2025 Bright Horizon School. All Rights Reserved.
+  </footer>
+
+  <!-- Vanta Birds -->
+  <script>
+    VANTA.BIRDS({
+      el: "#hero",
+      mouseControls:true,
+      touchControls:true,
+      backgroundAlpha:0,
+      color1:0xff6b6b,
+      color2:0x1e90ff,
+      quantity:3
+    });
+
+    // Card reveal animation
+    const cards = document.querySelectorAll('.feature-card');
+    function revealCards() {
+      cards.forEach(card => {
+        const pos = card.getBoundingClientRect().top;
+        if (pos < window.innerHeight - 100) {
+          card.style.opacity = 1;
+          card.style.transform = "translateY(0)";
+        }
+      });
+    }
+    window.addEventListener("scroll", revealCards);
+    window.addEventListener("load", revealCards);
+    // Trigger immediately to show cards that are already in view
+    setTimeout(revealCards, 100);
+  </script>
+
+</body>
+</html>
