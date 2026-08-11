@@ -124,6 +124,7 @@ When an Administrator edits content in the Admin Portal (e.g. updating the Princ
 ---
 
 ## Documentation Index
+- [Technology Migration Report](docs/MIGRATION.md)
 - [System Architecture](docs/ARCHITECTURE.md)
 - [Public Website Specs](docs/PUBLIC_WEBSITE.md)
 - [Admin Portal Specs](docs/ADMIN_PORTAL.md)
