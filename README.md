@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img src="apps/website/public/images/school/campus.jpg" alt="Bright Horizon School Campus" width="100%" />
+  <img src="apps/website/public/images/school/campus-main.jpg" alt="Bright Horizon School Main Campus" width="100%" />
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@
 - [Project Status](#-project-status)
 - [Key Features](#-key-features)
 - [Feature Status Matrix](#-feature-status-matrix)
-- [Screenshots](#-screenshots)
+- [Campus Showcase](#-campus-showcase--visual-gallery)
 - [Architecture](#-architecture)
 - [Project Structure](#-project-structure)
 - [Public Website](#-public-website)
@@ -125,11 +125,12 @@
 
 ---
 
-## 📷 Screenshots
+## 📷 Campus Showcase & Visual Gallery
 
 <p align="center">
-  <img src="apps/website/public/images/school/campus.jpg" alt="Bright Horizon School Public Interface" width="49%" />
-  <img src="apps/website/public/images/school/campus.jpg" alt="Bright Horizon School Admin Dashboard" width="49%" />
+  <img src="apps/website/public/images/school/campus-building.jpg" width="32%" alt="Bright Horizon School Building Infrastructure" />
+  <img src="apps/website/public/images/school/campus-grounds.jpg" width="32%" alt="Bright Horizon School Grounds & Courtyard" />
+  <img src="apps/website/public/images/school/campus-facilities.jpg" width="32%" alt="Bright Horizon School Campus Facilities" />
 </p>
 
 ---
