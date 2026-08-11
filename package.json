@@ -1,0 +1,24 @@
+{
+  "name": "bright-horizon-school-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:website": "npm --prefix apps/website run dev",
+    "dev:admin": "npm --prefix apps/admin run dev",
+    "dev:api": "npm --prefix services/api run dev",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:website\" \"npm run dev:admin\"",
+    "build:website": "npm --prefix apps/website run build",
+    "build:admin": "npm --prefix apps/admin run build",
+    "build:api": "npm --prefix services/api run build",
+    "build": "npm run build:api && npm run build:website && npm run build:admin",
+    "start:api": "npm --prefix services/api start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

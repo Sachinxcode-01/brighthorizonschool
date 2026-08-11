@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-primary: 'Outfit', 'Poppins', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Roboto', sans-serif;
+
+  --bg-primary: #0d1117;
+  --bg-surface: #121921;
+  --bg-card: rgba(22, 31, 50, 0.7);
+
+  --accent-pink: #ff4df0;
+  --accent-purple: #c91cff;
+  --accent-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+
+  --border-color: rgba(255, 255, 255, 0.12);
+  --border-glow: rgba(255, 77, 240, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.container {
+  width: 92%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.glass-card {
+  background: rgba(18, 25, 33, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: 0 0 25px rgba(255, 77, 240, 0.25);
+  transform: translateY(-4px);
+}
+
+.btn-glow {
+  background: linear-gradient(135deg, #ff4df0, #c91cff);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff4df0;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px #ff4df0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  color: white;
+}
