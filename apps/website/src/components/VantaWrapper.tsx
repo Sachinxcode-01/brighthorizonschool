@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import AIAssistantModal from './AIAssistantModal';
+import { ChatbotModal } from '@/features/chatbot';
 import VantaBirdsBg from './VantaBirdsBg';
 
 export default function VantaWrapper({ children }: { children: React.ReactNode }) {
@@ -19,7 +19,7 @@ export default function VantaWrapper({ children }: { children: React.ReactNode }
       </main>
 
       <Footer />
-      <AIAssistantModal isOpen={isAiOpen} onClose={() => setIsAiOpen(false)} />
+      <ChatbotModal isOpen={isAiOpen} onClose={() => setIsAiOpen(false)} />
     </div>
   );
 }

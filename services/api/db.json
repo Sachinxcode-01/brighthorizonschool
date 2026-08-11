@@ -1,0 +1,564 @@
+{
+  "admins": [
+    {
+      "id": "admin-1",
+      "username": "admin",
+      "email": "admin@brighthorizon.edu.in",
+      "passwordHash": "$2a$10$wT5H5W/WkE2V91y9.8lPvuO8H7V8yY1m7Y/v0XjXy8m9f9h9h9h9h",
+      "name": "Dr. A. K. Sharma",
+      "role": "Super Admin"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "t-101",
+      "name": "Mrs. Ananya Sen",
+      "photoUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+      "qualification": "M.Sc. Mathematics, B.Ed.",
+      "department": "Mathematics",
+      "subject": "Higher Mathematics & Statistics",
+      "experience": "12 Years",
+      "designation": "Head of Science & Math Dept.",
+      "email": "ananya.sen@brighthorizon.edu.in",
+      "phone": "+91 98301 23456",
+      "isPublicVisible": true,
+      "joiningDate": "2014-06-15",
+      "bio": "Passionate about making mathematics intuitive, logical, and fun for senior high school students."
+    },
+    {
+      "id": "t-102",
+      "name": "Mr. Rajesh Verma",
+      "photoUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+      "qualification": "Ph.D. Physics, M.Sc.",
+      "department": "Science",
+      "subject": "Physics & Astronomy",
+      "experience": "15 Years",
+      "designation": "Senior Physics Lecturer",
+      "email": "rajesh.verma@brighthorizon.edu.in",
+      "phone": "+91 98302 34567",
+      "isPublicVisible": true,
+      "joiningDate": "2011-04-10",
+      "bio": "Focused on experimental physics, robotics projects, and practical laboratory learning."
+    },
+    {
+      "id": "t-103",
+      "name": "Ms. Sunita Rao",
+      "photoUrl": "https://images.unsplash.com/photo-1580894732413-a70d90d4071c?w=400&q=80",
+      "qualification": "M.A. English Literature, M.Phil.",
+      "department": "Humanities",
+      "subject": "English Literature & Grammar",
+      "experience": "9 Years",
+      "designation": "Coordinator - Literary Society",
+      "email": "sunita.rao@brighthorizon.edu.in",
+      "phone": "+91 98303 45678",
+      "isPublicVisible": true,
+      "joiningDate": "2017-08-01",
+      "bio": "Fostering creative writing, debate excellence, and classic literature appreciation among young minds."
+    },
+    {
+      "id": "t-104",
+      "name": "Mr. David Miller",
+      "photoUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+      "qualification": "M.C.A., B.Sc. Computer Science",
+      "department": "Computer Science",
+      "subject": "Computer Science & AI Basics",
+      "experience": "7 Years",
+      "designation": "ICT & Innovation Lab Lead",
+      "email": "david.miller@brighthorizon.edu.in",
+      "phone": "+91 98304 56789",
+      "isPublicVisible": true,
+      "joiningDate": "2019-05-20",
+      "bio": "Guiding students in web development, python programming, robotics, and cyber safety."
+    }
+  ],
+  "students": [
+    {
+      "id": "s-1001",
+      "admissionNo": "BHS-2024-001",
+      "rollNo": "1001",
+      "name": "Aarav Sharma",
+      "gender": "Male",
+      "dob": "2010-05-14",
+      "className": "Grade 10",
+      "section": "A",
+      "parentName": "Sanjay Sharma",
+      "parentPhone": "+91 98111 22334",
+      "parentEmail": "sanjay.sharma@example.com",
+      "address": "12 Park Avenue, Green Park, City",
+      "status": "Active",
+      "joiningDate": "2024-04-01"
+    },
+    {
+      "id": "s-1002",
+      "admissionNo": "BHS-2024-002",
+      "rollNo": "1002",
+      "name": "Diya Patel",
+      "gender": "Female",
+      "dob": "2010-09-22",
+      "className": "Grade 10",
+      "section": "A",
+      "parentName": "Vikram Patel",
+      "parentPhone": "+91 98222 33445",
+      "parentEmail": "vikram.patel@example.com",
+      "address": "45 Sunrise Enclave, City",
+      "status": "Active",
+      "joiningDate": "2024-04-01"
+    },
+    {
+      "id": "s-1003",
+      "admissionNo": "BHS-2024-003",
+      "rollNo": "1003",
+      "name": "Rohan Kapoor",
+      "gender": "Male",
+      "dob": "2011-02-18",
+      "className": "Grade 9",
+      "section": "B",
+      "parentName": "Amit Kapoor",
+      "parentPhone": "+91 98333 44556",
+      "parentEmail": "amit.kapoor@example.com",
+      "address": "88 Lakeview Apartments, City",
+      "status": "Active",
+      "joiningDate": "2024-04-01"
+    }
+  ],
+  "staff": [
+    {
+      "id": "st-1",
+      "staffId": "STF-01",
+      "name": "Ramesh Kumar",
+      "role": "Senior Accountant",
+      "department": "Administration & Finance",
+      "email": "finance@brighthorizon.edu.in",
+      "phone": "+91 98444 55667",
+      "joiningDate": "2015-02-10",
+      "status": "Active"
+    },
+    {
+      "id": "st-2",
+      "staffId": "STF-02",
+      "name": "Priya Nair",
+      "role": "Head Librarian",
+      "department": "Library & Information",
+      "email": "library@brighthorizon.edu.in",
+      "phone": "+91 98555 66778",
+      "joiningDate": "2018-09-15",
+      "status": "Active"
+    }
+  ],
+  "admissions": [
+    {
+      "id": "adm-101",
+      "applicantName": "Kabir Mehta",
+      "parentName": "Alok Mehta",
+      "email": "alok.mehta@gmail.com",
+      "phone": "+91 98765 11223",
+      "gradeApplying": "Grade 9",
+      "previousSchool": "St. Xavier Academy",
+      "message": "Seeking admission for Academic Year 2026-27. Student excels in Science and Swimming.",
+      "status": "Pending",
+      "createdAt": "2026-08-01T10:30:00Z"
+    },
+    {
+      "id": "adm-102",
+      "applicantName": "Sneha Roy",
+      "parentName": "Rakesh Roy",
+      "email": "rakesh.roy@yahoo.com",
+      "phone": "+91 98765 44332",
+      "gradeApplying": "Grade 6",
+      "previousSchool": "Delhi Public School",
+      "message": "Transferred from Delhi due to job location move.",
+      "status": "Under Review",
+      "createdAt": "2026-08-05T14:15:00Z"
+    }
+  ],
+  "academics": [
+    {
+      "id": "cls-1",
+      "name": "Grade 10",
+      "sections": [
+        "A",
+        "B"
+      ],
+      "subjects": [
+        "Mathematics",
+        "Physics",
+        "Chemistry",
+        "English",
+        "Computer Science",
+        "Social Studies"
+      ],
+      "classTeacherId": "t-101",
+      "roomNo": "Room 302"
+    },
+    {
+      "id": "cls-2",
+      "name": "Grade 9",
+      "sections": [
+        "A",
+        "B",
+        "C"
+      ],
+      "subjects": [
+        "Mathematics",
+        "Science",
+        "English",
+        "Hindi",
+        "Social Studies",
+        "Information Technology"
+      ],
+      "classTeacherId": "t-103",
+      "roomNo": "Room 204"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "att-1",
+      "date": "2026-08-11",
+      "type": "Student",
+      "targetId": "s-1001",
+      "targetName": "Aarav Sharma",
+      "className": "Grade 10-A",
+      "status": "Present"
+    },
+    {
+      "id": "att-2",
+      "date": "2026-08-11",
+      "type": "Student",
+      "targetId": "s-1002",
+      "targetName": "Diya Patel",
+      "className": "Grade 10-A",
+      "status": "Present"
+    },
+    {
+      "id": "att-3",
+      "date": "2026-08-11",
+      "type": "Teacher",
+      "targetId": "t-101",
+      "targetName": "Mrs. Ananya Sen",
+      "status": "Present"
+    }
+  ],
+  "examinations": [
+    {
+      "id": "ex-1",
+      "title": "Mid-Term Examination 2026",
+      "term": "Term 1",
+      "className": "Grade 10",
+      "subject": "Mathematics",
+      "date": "2026-09-15",
+      "totalMarks": 100,
+      "passingMarks": 40
+    },
+    {
+      "id": "ex-2",
+      "title": "Mid-Term Examination 2026",
+      "term": "Term 1",
+      "className": "Grade 10",
+      "subject": "Physics",
+      "date": "2026-09-17",
+      "totalMarks": 100,
+      "passingMarks": 40
+    }
+  ],
+  "results": [
+    {
+      "id": "res-1",
+      "examId": "ex-1",
+      "studentId": "s-1001",
+      "studentName": "Aarav Sharma",
+      "className": "Grade 10",
+      "subject": "Mathematics",
+      "marksObtained": 92,
+      "maxMarks": 100,
+      "grade": "A+",
+      "remarks": "Outstanding conceptual clarity."
+    }
+  ],
+  "fees": [
+    {
+      "id": "fee-1",
+      "className": "Grade 10",
+      "academicYear": "2026-2027",
+      "tuitionFee": 35000,
+      "admissionFee": 10000,
+      "developmentFee": 5000,
+      "transportFee": 8000,
+      "dueDate": "2026-09-10"
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay-1",
+      "receiptNo": "REC-2026-8801",
+      "studentId": "s-1001",
+      "studentName": "Aarav Sharma",
+      "className": "Grade 10",
+      "amountPaid": 35000,
+      "paymentMethod": "Online",
+      "transactionId": "TXN9988112233",
+      "paymentDate": "2026-07-15",
+      "feeTerm": "Term 1 Tuition",
+      "status": "Paid"
+    }
+  ],
+  "timetable": [
+    {
+      "id": "tt-1",
+      "day": "Monday",
+      "className": "Grade 10-A",
+      "period": "1st Period (08:30 - 09:15)",
+      "subject": "Mathematics",
+      "teacherName": "Mrs. Ananya Sen",
+      "roomNo": "Room 302"
+    },
+    {
+      "id": "tt-2",
+      "day": "Monday",
+      "className": "Grade 10-A",
+      "period": "2nd Period (09:15 - 10:00)",
+      "subject": "Physics",
+      "teacherName": "Mr. Rajesh Verma",
+      "roomNo": "Physics Lab 1"
+    }
+  ],
+  "notices": [
+    {
+      "id": "n-1",
+      "title": "Annual Sports Meet 2026 Registration Open",
+      "category": "Sports",
+      "content": "All students from Grade 5 to 12 are invited to register for track & field, basketball, and football events by August 25.",
+      "author": "Sports Department",
+      "publishDate": "2026-08-10",
+      "expiryDate": "2026-08-30",
+      "isImportant": true
+    },
+    {
+      "id": "n-2",
+      "title": "Parents-Teacher Meeting (PTM) Schedule",
+      "category": "Academic",
+      "content": "First term PTM will be conducted on Saturday, August 29th, from 9:00 AM to 1:00 PM in respective classrooms.",
+      "author": "Principal's Office",
+      "publishDate": "2026-08-08",
+      "expiryDate": "2026-08-30",
+      "isImportant": true
+    },
+    {
+      "id": "n-3",
+      "title": "Independence Day Flag Hoisting Ceremony",
+      "category": "General",
+      "content": "School will assemble at 8:00 AM sharp on August 15th for the national flag hoisting followed by patriotic performances.",
+      "author": "Cultural Committee",
+      "publishDate": "2026-08-05",
+      "expiryDate": "2026-08-16",
+      "isImportant": false
+    }
+  ],
+  "news": [
+    {
+      "id": "news-1",
+      "title": "Bright Horizon Students Win National Science Olympiad",
+      "slug": "national-science-olympiad-winners",
+      "summary": "Our Grade 10 team secured 1st prize in the National Robotics & Innovation Fair 2026.",
+      "content": "We are immensely proud to announce that students Aarav Sharma and Diya Patel bagged top honors for their AI-driven renewable energy prototype...",
+      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
+      "author": "Media Relations",
+      "publishDate": "2026-08-02",
+      "status": "Published"
+    },
+    {
+      "id": "news-2",
+      "title": "Inauguration of New Advanced STEM & Robotics Lab",
+      "slug": "inauguration-stem-robotics-lab",
+      "summary": "State-of-the-art facility featuring 3D printers, IoT kits, and high-performance workstations now open.",
+      "content": "The management is thrilled to dedicate our new 2,500 sq ft innovation hub to cultivate futuristic technical skills...",
+      "imageUrl": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800&q=80",
+      "author": "Principal's Office",
+      "publishDate": "2026-07-28",
+      "status": "Published"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-1",
+      "title": "Science & Innovation Fair 2026",
+      "description": "Interactive science projects, live demonstrations, and working prototypes displayed by students from all grades.",
+      "date": "2026-08-22",
+      "time": "09:30 AM - 03:30 PM",
+      "location": "Main Auditorium & Exhibition Ground",
+      "category": "Academic",
+      "imageUrl": "https://images.unsplash.com/photo-1564069114553-74154c41864e?w=800&q=80",
+      "isPublic": true
+    },
+    {
+      "id": "ev-2",
+      "title": "Inter-House Drama & Music Festival",
+      "description": "Annual cultural show featuring theatrical plays, choir recitals, and orchestra performances.",
+      "date": "2026-09-05",
+      "time": "05:00 PM - 08:30 PM",
+      "location": "Open Air Theatre",
+      "category": "Cultural",
+      "imageUrl": "https://images.unsplash.com/photo-1469488865564-c2de10f69f96?w=800&q=80",
+      "isPublic": true
+    }
+  ],
+  "gallery": [
+    {
+      "id": "alb-1",
+      "title": "Annual Sports Day Highlights",
+      "category": "Sports",
+      "coverImage": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
+      "eventDate": "2026-02-15",
+      "images": [
+        {
+          "id": "img-1",
+          "url": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
+          "caption": "Track sprint finals"
+        },
+        {
+          "id": "img-2",
+          "url": "https://images.unsplash.com/photo-1517649763962-0c623266010b?w=800&q=80",
+          "caption": "Basketball trophy ceremony"
+        }
+      ]
+    },
+    {
+      "id": "alb-2",
+      "title": "Robotics Workshop & STEM Expo",
+      "category": "Academic",
+      "coverImage": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80",
+      "eventDate": "2026-05-10",
+      "images": [
+        {
+          "id": "img-3",
+          "url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80",
+          "caption": "Students working on IoT circuits"
+        }
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "ach-1",
+      "title": "100% Pass Percentage in CBSE Grade 10 & 12 Board Exams",
+      "category": "School",
+      "recipientName": "Bright Horizon School Batch of 2025-26",
+      "year": "2026",
+      "description": "Over 45% of students scored above 90% in aggregate marks across all streams.",
+      "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80"
+    },
+    {
+      "id": "ach-2",
+      "title": "Best Eco-Friendly Green Campus Award",
+      "category": "School",
+      "recipientName": "State Education Council",
+      "year": "2025",
+      "description": "Recognized for solar powered facilities, rainwater harvesting, and zero-plastic policy.",
+      "imageUrl": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80"
+    }
+  ],
+  "downloads": [
+    {
+      "id": "dl-1",
+      "title": "Prospectus & Admission Application Form 2026-27",
+      "category": "Admission Form",
+      "fileUrl": "#",
+      "fileSize": "2.4 MB",
+      "uploadedAt": "2026-04-01"
+    },
+    {
+      "id": "dl-2",
+      "title": "Academic Calendar & Holiday List 2026-27",
+      "category": "Circular",
+      "fileUrl": "#",
+      "fileSize": "1.1 MB",
+      "uploadedAt": "2026-04-05"
+    },
+    {
+      "id": "dl-3",
+      "title": "Grade 9 & 10 CBSE Curriculum Syllabus Breakdown",
+      "category": "Syllabus",
+      "fileUrl": "#",
+      "fileSize": "3.8 MB",
+      "uploadedAt": "2026-04-10"
+    }
+  ],
+  "calendar": [
+    {
+      "id": "cal-1",
+      "title": "Independence Day Holiday",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-15",
+      "type": "Holiday",
+      "description": "School holiday on account of 80th Independence Day."
+    },
+    {
+      "id": "cal-2",
+      "title": "Mid-Term Examinations Term 1",
+      "startDate": "2026-09-15",
+      "endDate": "2026-09-26",
+      "type": "Exam",
+      "description": "Formal examinations for Grade 6 to Grade 12."
+    }
+  ],
+  "enquiries": [
+    {
+      "id": "enq-1",
+      "name": "Meera Joshi",
+      "email": "meera.j@gmail.com",
+      "phone": "+91 99000 11223",
+      "subject": "Inquiry regarding Grade 1 Admission criteria",
+      "message": "Kindly inform if transport facility is available for Green Valley Sector 4.",
+      "submittedAt": "2026-08-10T11:45:00Z",
+      "status": "New"
+    }
+  ],
+  "siteContent": {
+    "heroTitle": "Welcome to Bright Horizon School",
+    "heroSubtitle": "Shaping Young Minds for a Brighter Future. Excellence in Education, Innovation, and Character Building.",
+    "principalName": "Dr. S. K. Mukherjee",
+    "principalMessage": "At Bright Horizon School, education goes beyond textbooks. We believe in nurturing curious minds, fostering moral integrity, and empowering every child to excel in an ever-evolving world. Our holistic curriculum blends academic rigor with arts, sports, technology, and community values.",
+    "principalImageUrl": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80",
+    "schoolHistory": "Established in 1998, Bright Horizon School began with a vision to provide world-class education with affordable accessibility. Over 28 years, our campus has expanded to accommodate modern science labs, smart classrooms, sports complexes, and a vibrant community of over 2,000 learners.",
+    "vision": "To be a premier educational institution inspiring global leadership, environmental stewardship, and lifelong passion for learning.",
+    "mission": "To deliver holistic, inclusive, and technology-driven education that develops analytical minds, compassionate hearts, and resilient leaders.",
+    "coreValues": [
+      "Academic Excellence",
+      "Integrity & Respect",
+      "Innovation & Curiosity",
+      "Inclusivity & Empathy",
+      "Environmental Responsibility"
+    ],
+    "contactAddress": "Bright Horizon School Road, Knowledge Hub Sector 12, City Centre - 400018",
+    "contactPhone": "+91 98300 00000 / 033-2456-7890",
+    "contactEmail": "info@brighthorizonschool.edu.in",
+    "workingHours": "Monday - Saturday: 8:00 AM - 4:00 PM",
+    "socialLinks": {
+      "facebook": "https://facebook.com",
+      "twitter": "https://twitter.com",
+      "instagram": "https://instagram.com",
+      "youtube": "https://youtube.com"
+    }
+  },
+  "settings": {
+    "schoolName": "Bright Horizon School",
+    "logoUrl": "/logo.png",
+    "currentAcademicYear": "2026-2027",
+    "academicTerms": [
+      "Term 1",
+      "Term 2"
+    ],
+    "smtpConfigured": true,
+    "maintenanceMode": false
+  },
+  "auditLogs": [
+    {
+      "id": "log-1",
+      "timestamp": "2026-08-11T12:00:00Z",
+      "adminId": "admin-1",
+      "adminEmail": "admin@brighthorizon.edu.in",
+      "action": "Admin Login",
+      "details": "Successful login from IP 127.0.0.1",
+      "ipAddress": "127.0.0.1"
+    }
+  ]
+}

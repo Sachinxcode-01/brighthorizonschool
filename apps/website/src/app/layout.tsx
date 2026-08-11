@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import '../styles/globals.css';
-import VantaWrapper from '../components/VantaWrapper';
+import '@/styles/globals.css';
+import VantaWrapper from '@/components/VantaWrapper';
 
 export const metadata: Metadata = {
   title: 'Bright Horizon School | Excellence in Education & Innovation',

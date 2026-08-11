@@ -1,17 +1,32 @@
 import { ApiResponse, SiteContent, TeacherProfile, Notice, SchoolEvent, NewsItem, GalleryAlbum, Achievement, DocumentDownload, CalendarEvent } from '../types';
 
+declare const process: {
+  env: {
+    NEXT_PUBLIC_API_URL?: string;
+    [key: string]: string | undefined;
+  };
+};
+
+interface NextFetchRequestInit extends RequestInit {
+  next?: {
+    revalidate?: number | false;
+    tags?: string[];
+  };
+}
+
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api/v1/public';
 
-async function fetchPublic<T>(endpoint: string, options: RequestInit = {}): Promise<ApiResponse<T>> {
+async function fetchPublic<T>(endpoint: string, options: NextFetchRequestInit = {}): Promise<ApiResponse<T>> {
   try {
+    const { next, ...fetchOpts } = options;
     const res = await fetch(`${API_BASE_URL}${endpoint}`, {
       headers: {
         'Content-Type': 'application/json',
-        ...options.headers,
+        ...fetchOpts.headers,
       },
-      ...options,
-      next: { revalidate: 60 } // Next.js ISR revalidation
-    });
+      ...fetchOpts,
+      ...(next ? { next } : { next: { revalidate: 60 } })
+    } as NextFetchRequestInit);
     return await res.json();
   } catch (err: any) {
     console.error(`Fetch error on ${endpoint}:`, err);

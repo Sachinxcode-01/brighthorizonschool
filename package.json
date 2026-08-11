@@ -16,6 +16,7 @@
     "build:admin": "npm --prefix apps/admin run build",
     "build:api": "npm --prefix services/api run build",
     "build": "npm run build:api && npm run build:website && npm run build:admin",
+    "type-check": "npm --prefix apps/website run type-check",
     "start:api": "npm --prefix services/api start"
   },
   "devDependencies": {
