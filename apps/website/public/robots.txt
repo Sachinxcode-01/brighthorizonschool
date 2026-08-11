@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bright-horizon-school.vercel.app/sitemap.xml
